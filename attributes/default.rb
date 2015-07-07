@@ -1,0 +1,1 @@
+default["win2012r2"]["registry_value_test"] = registry_get_values("HKLM:\\Software\\ASUS\\ASUS Smart Gesture")

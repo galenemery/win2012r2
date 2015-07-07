@@ -4,21 +4,23 @@
 #
 # Copyright (c) 2015 The Authors, All Rights Reserved.
 
-windows_feature 'IIS-WebServer' do
-  action :install
-  all true
-end
+node.default["win2012r2"]["registry_value_test"] = registry_get_values("HKLM:\\Software\\ASUS\\ASUS Smart Gesture")
 
-group 'vagrant_admins' do
-  members ['vagrant']
-end
+# windows_feature 'IIS-WebServer' do
+#   action :install
+#   all true
+# end
 
-user 'bjorn' do
-  password '$1$JJsvHslV$szsCjVEroftprNn4JHtDi'
-end
+# group 'vagrant_admins' do
+#   members ['vagrant']
+# end
 
-group "administrators" do
-  action :modify
-  members ['bjorn']
-  append true
-end
+# user 'bjorn' do
+#   password '$1$JJsvHslV$szsCjVEroftprNn4JHtDi'
+# end
+
+# group 'administrators' do
+#   action :modify
+#   members ['bjorn']
+#   append true
+# end

@@ -7,10 +7,18 @@ driver:
 
 provisioner:
   name: chef_zero
-  box: win2012r2
+  client_rb:
+    audit_mode: :enabled
 
 platforms:
-  - name: win2012r2
+- name: windows_2012r2
+  driver_config:
+    box: mwrock/Windows2012R2
+    communicator: winrm
+    vm_hostname: false
+  transport:
+    name: winrm
+
 
 suites:
   - name: default
